@@ -1,0 +1,39 @@
+Scal-1.0 Installation and Usage Instructions
+============================================
+
+1. Clone the repository:
+   git clone https://github.com/SanchitKumaRR/scal.git
+   cd scal
+
+2. Make the script executable:
+   chmod +x myscript.sh
+
+3. (Optional) To run the script directly, use:
+   ./myscript.sh
+
+4. To run `scal` as a global command, create a symbolic link:
+   sudo ln -s /full/path/to/scal/myscript.sh /usr/local/bin/scal
+
+   Replace /full/path/to/scal/ with the absolute path where you cloned the repository.
+
+5. After creating the symbolic link, you can run the program from anywhere by typing:
+   scal
+
+6. To remove the symbolic link, if needed:
+   sudo rm /usr/local/bin/scal
+
+---
+
+Notes:
+- Ensure you have the necessary dependencies installed:
+  - bash (usually pre-installed)
+  - bc
+  - cmatrix (optional, for the cool matrix effect)
+
+- If you want to package this as a pacman package, use the included PKGBUILD file.
+- Run 'makepkg' inside this directory to build the package.
+- Install it with 'sudo pacman -U scal-1.0-1-any.pkg.tar.zst'.
+- After installation, you can simply run:
+  scal
+
+Enjoy using Scal!
