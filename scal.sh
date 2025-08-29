@@ -1,95 +1,56 @@
 #!/usr/bin/env bash
-
 # scal.sh — Bash with colors
 
 clear
-
 echo PRESS CTRL+C TO Exit booting session starting after 3s
-
 sleep 3
-
 cmatrix
-
 clear
-
 # Colors
-
 CYAN='\e[36m'
-
 BLUE='\e[34m'
-
 GREEN='\e[32m'
-
 RESET='\e[0m'
-
-RED='\e[31m'
-
+RED = '\e[31m'
 # Banner (Cyan)
-
 echo -e "${CYAN}"
-
 cat <<'__SCAL__'
-
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-####### @@ @@
-
-## @@     1.1      @@
-
-## @@ :)@@
-
-## @@@@@@@@@@@@@@@@@@
-
-####### ## @@
-
-## ###### #### ## @@
-
-## ## ## ## ## @@
-
-## ## ##$$$$## ## @@
-
-####### ###### ## ## ###### @@
-
+#######                      @@              @@
+##                           @@ALPHA 1.1:DEV @@
+##                           @@            :)@@
+##                           @@@@@@@@@@@@@@@@@@
+#######            ##                        @@
+     ## ######    ####    ##                 @@
+     ## ##       ##  ##   ##                 @@
+     ## ##      ##$$$$##  ##                 @@
+####### ###### ##      ## ######             @@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-# #### # # @@
-
-###$# # # @@
-
-###$@# #### ## ## # #### #### # ###@@
-
-###$# # #$$# # # # # # # # # @@
-
-# #### # # # ## #### # # # # @@
-
+    #       ####                   #    #    @@
+ ###$#      #                      #         @@
+ ###$@#     ####   ##   ##  # #### #### # ###@@
+ ###$#         #  #$$#  # # # #    #  # #  # @@
+    #       #### #    # #  ## #### #  # #  # @@
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 #Alpha 1.1:Dev-Version
-
 __SCAL__
-
 echo -e "${RESET}"
 
 # integer-check function
-
 is_int() {
   [[ $1 =~ ^[+-]?[0-9]+$ ]]
 }
 
 # Instructions (Dark Blue)
-
 echo -e "${BLUE}Enter two integer values and choose an operation (+ - × ÷).${RESET}"
 
 # Inputs (Green)
-
 echo -ne "${GREEN}Enter Val1→ ${RESET}"; read -r val1
-
 echo -ne "${GREEN}Enter Val2→ ${RESET}"; read -r val2
-
 echo -ne "${GREEN}Enter operation→ ${RESET}"; read -r opt
 
 # Validate integers
-
 if ! is_int "$val1" || ! is_int "$val2"; then
   echo "ERROR: Please enter integers."
   exit 1
