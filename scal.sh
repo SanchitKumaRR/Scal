@@ -11,7 +11,6 @@ CYAN='\e[36m'
 BLUE='\e[34m'
 GREEN='\e[32m'
 RESET='\e[0m'
-RED = '\e[31m'
 # Banner (Cyan)
 echo -e "${CYAN}"
 cat <<'__SCAL__'
